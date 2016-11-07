@@ -28,8 +28,13 @@ suite('when i want to some pizza', function () {
         assert.equal('thin', pizza.dough);
     });
 
-    test('i have 100, buy pizza', function () {
-        let delivery = pizza.buy(30)
+    test('i can buy pizza with 30 money', function () {
+        let delivery = pizza.buy(30);
         assert.equal(30-price, delivery);
     })
+
+    test('i can NOT buy pizza with 20 money', function () {
+        assert.throws(function(){pizza.buy(20)}, /Not enough money/);
+    })
+
 });

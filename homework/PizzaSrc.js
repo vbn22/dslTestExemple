@@ -14,9 +14,9 @@ export class Pizza {
     buy(incomin){
         if (incomin > this.price){
             let delivery = incomin - this.price
-            return delivery
+            return delivery;
         } else {
-            throw "Not enough money"
+            throw "Not enough money";
         }
     }
 
