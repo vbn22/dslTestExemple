@@ -29,12 +29,16 @@ suite('when i want to some pizza', function () {
     });
 
     test('i can buy pizza with 30 money', function () {
-        let delivery = pizza.buy(30);
+        let delivery = pizza.buy(30,1);
         assert.equal(30-price, delivery);
     })
 
     test('i can NOT buy pizza with 20 money', function () {
-        assert.throws(function(){pizza.buy(20)}, /Not enough money/);
+        assert.throws(function(){pizza.buy(20,1)}, /Not enough money/);
     })
 
+    test('get cake if i buy 3 pizzas', function () {
+        let delivery = pizza.buy(100,3);
+        assert.equal(true,pizza.cake);
+    })
 });

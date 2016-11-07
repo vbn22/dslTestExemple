@@ -9,16 +9,22 @@ export class Pizza {
         this.olives = olives;
         this.dough = dough;
         this.price = price;
+        this.cake = false;
     }
 
-    buy(incomin){
-        if (incomin > this.price){
-            let delivery = incomin - this.price
+    buy(incomin,count){
+        if (incomin > this.price*count){
+            let delivery = incomin - this.price * count
+            if (count >= 3){
+                this.cake = true;
+            }
             return delivery;
         } else {
             throw "Not enough money";
         }
     }
+
+
 
 };
 
