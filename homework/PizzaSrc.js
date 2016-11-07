@@ -3,8 +3,13 @@
  */
 'use strict';
 
-export function Pizza(filling, olives, dough) {
-    
+export class Pizza {
+    constructor(filling, olives, dough){
+        this.filling = filling;
+        this.olives = olives;
+        this.dough = dough;
+    }
+
 };
 
 
@@ -34,3 +39,5 @@ export function NewPizza () {
         return new Pizza(state.filling, state.olives, state.dough);
     }
 };
+
+
